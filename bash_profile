@@ -1,8 +1,8 @@
-#========================#
-# RYAN MOON BASH_PROFILE #
-#========================#
+#===========================#
+# RYAN FLANERY BASH_PROFILE #
+#===========================#
 
-for file in ~/.{prompt,aliases,functions,moon_identities}; do
+for file in ~/.{prompt,aliases,functions,flanery_identities}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -56,15 +56,6 @@ export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 shopt -s histappend # append new history items to .bash_history
 export HISTIGNORE="&:[ ]*:clear"
 
-#====#
-# HH #
-#====#
-
-export HH_CONFIG=hicolor         # get more colors
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
-# if this is interactive shell, then bind hh to Ctrl-r
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
-
 #====================================#
 # PUT CURRENT DIRECTORY IN SHELL TAB #
 #====================================#
@@ -95,12 +86,6 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
-#==================#
-# GOOGLE CLOUD SDK #
-#==================#
-
-source '/usr/local/bin/google-cloud-sdk/path.bash.inc'
-source '/usr/local/bin/google-cloud-sdk/completion.bash.inc'
 
 #===========#
 # BREW CASK #
@@ -108,11 +93,6 @@ source '/usr/local/bin/google-cloud-sdk/completion.bash.inc'
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-#======#
-# XIKI #
-#======#
-
-source ~/.xsh
 
 #======================================#
 # IDENTITY / KEY / PRIVATE INFO SOURCE #
